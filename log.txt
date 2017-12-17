@@ -1,0 +1,6 @@
+FindSend IP
+The IP does NOT change
+FindSend IP
+The IP DO change
+Email successfully sent
+Email successfully sent
