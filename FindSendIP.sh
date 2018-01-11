@@ -1,5 +1,6 @@
 #!/bin/sh
-echo "FindSend IP"
+echo "FindSend IP" 
+date
 cd /home/pi/python_code/FindSendIP
 python FindSendIP.py
 
