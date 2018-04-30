@@ -57,7 +57,7 @@ def send_mail(username, password, from_addr, to_addrs, msg):
 
 #find by PyQuery
 page_data=PyQuery(url)
-MyIP=page_data('body > div.container > div > main > h1').text()#selector
+MyIP=page_data('.myip').text()#for class = .myip
 #MyIP=page_date('.navbar-text').text() # for class = .navbar-text navbar-right
 
 #write my IP to the file
@@ -66,7 +66,8 @@ old_IP = file_object.read()
 if MyIP==old_IP:
     print('The IP does NOT change')
     file_object.close()
-    
+elif MyIP=='':
+    print('Can NOT get IP')    
 else:#if the IP address changed to write it down and send email 
     print('The IP DO change')
     file_object = open('./IP.txt', 'w')#hard code need to changed
@@ -103,12 +104,3 @@ else:#if the IP address changed to write it down and send email
         except SMTPAuthenticationError:
             print ('SMTPAuthenticationError')
             print ("Email NOT sent")
-
-
-
-
-
-
-
-
-
